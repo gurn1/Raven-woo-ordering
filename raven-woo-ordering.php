@@ -22,13 +22,13 @@
 
  defined( 'ABSPATH' ) || exit;
 
- if ( ! defined( 'RV_PLUGIN_FILE' ) ) {
-	define( 'RV_PLUGIN_FILE', __FILE__ );
+ if ( ! defined( 'RVO_PLUGIN_FILE' ) ) {
+	define( 'RVO_PLUGIN_FILE', __FILE__ );
 }
 
 // Include main class
 if( ! class_exists( 'Raven_woo_ordering' ) ) {
-	include_once dirname( RV_PLUGIN_FILE ) . '/includes/class-woo-ordering.php';
+	include_once dirname( RVO_PLUGIN_FILE ) . '/includes/class-woo-ordering.php';
 }
 
 /**
