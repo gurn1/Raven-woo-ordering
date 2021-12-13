@@ -21,6 +21,13 @@ class Raven_woo_ordering {
     public $option_name = 'rvo-woo-ordering';
 
     /**
+	 * The single instance of the class.
+	 *
+	 * @since 1.0.0
+	 */
+	protected static $_instance = null;
+
+    /**
      * Admin class
      *
      * @var admin
@@ -54,6 +61,9 @@ class Raven_woo_ordering {
     public function __construct() {
         $this->define_constants();
         $this->includes();
+
+        $this->admin();
+        $this->frontend();
     }
 
     /**
@@ -63,6 +73,7 @@ class Raven_woo_ordering {
         define( 'RVO_ABSPATH', dirname( RVO_PLUGIN_FILE ) . '/' );
         define( 'RVO_URL', plugin_dir_url( RVO_PLUGIN_FILE ) );
         define( 'RVO_VERSION', $this->version );
+        define( 'RVO_DOMAIN', 'raven-woo-ordering');
     }
 
     /**
@@ -72,6 +83,11 @@ class Raven_woo_ordering {
      */
     public function includes() {
         
+        // Admin class
+        include_once RVO_ABSPATH . 'includes/class-rvo-admin.php';
+
+        // Frontend class
+        include_once RVO_ABSPATH . 'includes/class-rvo-frontend.php';
     }
 
     /**
