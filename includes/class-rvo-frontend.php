@@ -1,3 +1,5 @@
+<!-- learning git comment -->
+
 <?php
 /**
  *  Class for frontend functions
